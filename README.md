@@ -7,11 +7,7 @@ a simple util for logging method invocation
 you need override `toString`method,and return seqId.
 
 ```java
-/**
- * 
- * @author Hezf
- *
- */
+
 public class Demo {
     private static String seqId="";
 	public static void main(String[] args) {
@@ -34,11 +30,7 @@ you need use `StackTrace` like below, you can get the trace path string.
 and ensure that any method called contains trace code like this:
 
 ```java
-/**
- * 
- * @author Hezf
- *
- */
+
 public class A {
 	public void p() {
 		StackTrace.printTrace();
@@ -49,11 +41,7 @@ public class A {
 ```
 
 ```java
-/**
- * 
- * @author Hezf
- *
- */
+
 public class B {
 	private A a = new A();
 
