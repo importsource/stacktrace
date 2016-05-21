@@ -69,13 +69,11 @@ public class B {
 
 ```log
 
-depth:2,,234sd3ed2dXl1,com.importsource.util.stacktrace.Demo>>>com.importsource.util.stacktrace.C>>>
+depth:1,,234sd3ed2dXl1,com.importsource.util.stacktrace.Demo>>>com.importsource.util.stacktrace.C>>>
+depth:2,,234sd3ed2dXl1,com.importsource.util.stacktrace.Demo>>>com.importsource.util.stacktrace.C>>>com.importsource.util.stacktrace.B>>>
+depth:3,,234sd3ed2dXl1,com.importsource.util.stacktrace.Demo>>>com.importsource.util.stacktrace.C>>>com.importsource.util.stacktrace.B>>>com.importsource.util.stacktrace.A>>>
+a
 
-depth:3,,234sd3ed2dXl1,com.importsource.util.stacktrace.Demo>>>com.importsource.util.stacktrace.C>>>
-com.importsource.util.stacktrace.B>>>
-
-depth:4,,234sd3ed2dXl1,com.importsource.util.stacktrace.Demo>>>com.importsource.util.stacktrace.C>>>
-com.importsource.util.stacktrace.B>>>com.importsource.util.stacktrace.A>>>
 
 
 
