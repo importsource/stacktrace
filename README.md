@@ -33,7 +33,7 @@ and ensure that any method called contains trace code like this:
 
 public class A {
 	public void p() {
-		StackTrace.printTrace();
+		System.out.println(StackTrace.trace(new Throwable()));
 		System.out.println("a");
 	}
 
@@ -46,9 +46,19 @@ public class B {
 	private A a = new A();
 
 	public void p() {
-		StackTrace.printTrace();
+		System.out.println(StackTrace.trace(new Throwable()));
 		a.p();
-		System.out.println("b");
+	}
+}
+```
+
+```java
+public class C {
+	private B b = new B();
+
+	public void p() {
+		System.out.println(StackTrace.trace(new Throwable()));
+		b.p();
 	}
 }
 ```
