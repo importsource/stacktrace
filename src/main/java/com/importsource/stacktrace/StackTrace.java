@@ -13,7 +13,7 @@ public class StackTrace {
 		StackTraceElement[] stackTraces = throwable.getStackTrace();
 		StringBuilder from = new StringBuilder();
 		from.append("depth:");
-		from.append(stackTraces.length-1);
+		from.append(stackTraces.length);
 		from.append(",");
 		for (int i = stackTraces.length - 1; i >= 0; i--) {
 			StackTraceElement element = stackTraces[i];
