@@ -9,8 +9,7 @@ public class C {
 	private B b = new B();
 
 	public void p() {
-		StackTrace.printTrace();
+		System.out.println(StackTrace.trace(new Throwable()));
 		b.p();
-		System.out.println("c");
 	}
 }

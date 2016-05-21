@@ -7,13 +7,15 @@ package com.importsource.stacktrace;
  */
 public class StackTrace {
 	public static String trace(Throwable throwable) {
+		if(throwable==null){
+			throw new NullPointerException("Throwable can't be null.");
+		}
 		StackTraceElement[] stackTraces = throwable.getStackTrace();
-		// System.out.println(stackTraces.length);
-		StringBuffer from = new StringBuffer();
+		StringBuilder from = new StringBuilder();
 		from.append("depth:");
 		from.append(stackTraces.length-1);
 		from.append(",");
-		for (int i = stackTraces.length - 1; i > 0; i--) {
+		for (int i = stackTraces.length - 1; i >= 0; i--) {
 			StackTraceElement element = stackTraces[i];
 			String clazzName = element.getClassName();
 			if(i==stackTraces.length - 1){
@@ -22,27 +24,19 @@ public class StackTrace {
 					from.append(Class.forName(clazzName).newInstance().toString());
 					from.append(",");
 				} catch (InstantiationException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					throw new RuntimeException(e);
 				} catch (IllegalAccessException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					throw new RuntimeException(e);
 				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					throw new RuntimeException(e);
 				}
 			}
 			
-			// System.out.println(clazzName);
-			from.append(clazzName + ">>>");
+			from.append(clazzName);
+			from.append(">>>");
 
 		}
-
-		// System.out.println(from.toString());
 		return from.toString();
 	}
 
-	public static void printTrace() {
-		System.out.println(trace(new Throwable()));
-	}
 }

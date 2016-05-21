@@ -7,7 +7,7 @@ package com.importsource.stacktrace;
  */
 public class A {
 	public void p() {
-		StackTrace.printTrace();
+		System.out.println(StackTrace.trace(new Throwable()));
 		System.out.println("a");
 	}
 
