@@ -7,11 +7,7 @@ a simple util for logging method invocation
 you need override `toString`method,and return seqId.
 
 ```java
-/**
- * 
- * @author Hezf
- *
- */
+
 public class Demo {
     private static String seqId="";
 	public static void main(String[] args) {
@@ -34,14 +30,10 @@ you need use `StackTrace` like below, you can get the trace path string.
 and ensure that any method called contains trace code like this:
 
 ```java
-/**
- * 
- * @author Hezf
- *
- */
+
 public class A {
 	public void p() {
-		StackTrace.printTrace();
+		System.out.println(StackTrace.trace(new Throwable()));
 		System.out.println("a");
 	}
 
@@ -49,18 +41,24 @@ public class A {
 ```
 
 ```java
-/**
- * 
- * @author Hezf
- *
- */
+
 public class B {
 	private A a = new A();
 
 	public void p() {
-		StackTrace.printTrace();
+		System.out.println(StackTrace.trace(new Throwable()));
 		a.p();
-		System.out.println("b");
+	}
+}
+```
+
+```java
+public class C {
+	private B b = new B();
+
+	public void p() {
+		System.out.println(StackTrace.trace(new Throwable()));
+		b.p();
 	}
 }
 ```
@@ -69,18 +67,14 @@ public class B {
 
 ```log
 
-depth:2,,234sd3ed2dXl1,com.importsource.util.stacktrace.Demo>>>com.importsource.util.stacktrace.C>>>
+depth:1,,234sd3ed2dXl1,com.importsource.util.stacktrace.Demo>>>com.importsource.util.stacktrace.C>>>
 
-depth:3,,234sd3ed2dXl1,com.importsource.util.stacktrace.Demo>>>com.importsource.util.stacktrace.C>>>
+depth:2,,234sd3ed2dXl1,com.importsource.util.stacktrace.Demo>>>com.importsource.util.stacktrace.C>>>
 com.importsource.util.stacktrace.B>>>
 
-depth:4,,234sd3ed2dXl1,com.importsource.util.stacktrace.Demo>>>com.importsource.util.stacktrace.C>>>
+depth:3,,234sd3ed2dXl1,com.importsource.util.stacktrace.Demo>>>com.importsource.util.stacktrace.C>>>
 com.importsource.util.stacktrace.B>>>com.importsource.util.stacktrace.A>>>
 
-
-
 a
-b
-c
 
 ```
