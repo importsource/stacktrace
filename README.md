@@ -67,14 +67,10 @@ public class C {
 
 ```log
 
-depth:1,,234sd3ed2dXl1,com.importsource.util.stacktrace.Demo>>>com.importsource.util.stacktrace.C>>>
-
-depth:2,,234sd3ed2dXl1,com.importsource.util.stacktrace.Demo>>>com.importsource.util.stacktrace.C>>>
-com.importsource.util.stacktrace.B>>>
-
-depth:3,,234sd3ed2dXl1,com.importsource.util.stacktrace.Demo>>>com.importsource.util.stacktrace.C>>>
-com.importsource.util.stacktrace.B>>>com.importsource.util.stacktrace.A>>>
-
+depth:2,,234sd3ed2dXl1,com.importsource.stacktrace.Demo>>>com.importsource.stacktrace.C>>>
+depth:3,,234sd3ed2dXl1,com.importsource.stacktrace.Demo>>>com.importsource.stacktrace.C>>>com.importsource.stacktrace.B>>>
+depth:4,,234sd3ed2dXl1,com.importsource.stacktrace.Demo>>>com.importsource.stacktrace.C>>>com.importsource.stacktrace.B>>>com.importsource.stacktrace.A>>>
 a
+
 
 ```
