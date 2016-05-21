@@ -1,4 +1,4 @@
-# stacktrace
+# Stacktrace
 a simple util for logging method invocation
 
 
